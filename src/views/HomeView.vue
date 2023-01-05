@@ -8,10 +8,14 @@
       <div id="inputStyle">
         <div v-if="listGenre.length > 0" >
           <ul>
+            
             <li v-for="genre in listGenre">
+              <router-link :to="'/ListeArtistes/'+genre.id">
               {{genre.name}}
             <li><img :src="genre.picture" alt="img" /></li>
+          </router-link>
             </li>
+            
         </ul>
       </div>
       </div>

@@ -20,7 +20,7 @@ export default {
     };
   },
   props: {
-    genre: String,
+    genreId: String,
   },
   async mounted() {
     await this.recupererListeArtiste();

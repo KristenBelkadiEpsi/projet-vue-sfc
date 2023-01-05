@@ -22,6 +22,11 @@ const routes = [
     // this generates a separate chunk (podcast.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "podcast" */ '../views/PodcastView.vue')
+  },
+  {
+    path: '/ListeArtistes/:id',
+    name: 'ListeArtistes',
+    component: () => import('../components/ListeArtistes.vue')
   }
 ]
 
