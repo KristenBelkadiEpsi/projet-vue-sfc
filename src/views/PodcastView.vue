@@ -1,9 +1,9 @@
 <template>
-  <div class="podcast">
+  <div class="listPodcast">
     <h1> Liste des Podcasts </h1>
 		<ul>
-			<li v-for="genre in commits">
-				je suis une vache.
+			<li v-for="podcast in listPodcast">
+				{{podcast.name}} (id: {{podcast.id}})
 			</li>
 		</ul>
   </div>
@@ -11,49 +11,40 @@
 
 <script>
 	import axios from 'axios'
-	const apiURL = "https://api.deezer.com/podcast";
-	const config = {};
-	
-	Vue.createAoo({
-		
-		data() {
-			return {
-				branches: ["main", "dev"],
-				currentBranch: "main",
-				commits: null,
-			};
-		},
-		created: function () {
-			this.fetchDataAsync();
-		},
-		
-		watch: {
-			curentBranch: "fetchDataAsync",
-		},
-		
-		methods: {
-			fetchDataAsync: async function () {
-				try {
-					const response = await axios.get(apiURL + this.currentBranch, config)
-					console.log(response.data)
-					this.commits = response.data
-				    console.log(self.commits[0].html_url);
-				} catch(error) {
-						console.log(error);
-				}
-			},
-			formattedMessage: function (message) {
-				const newline = message.indexOf("\n");
-				return newline > 0 ? message.slice(0, newline) : message;
-			},
-			formattedDate: function (date) {
-				return date.replace(/T|Z/g, " ");
-			},
-		},
-	}).mount("#demo");
+	const apiURL = "https://api.deezer.com/podcast/";
 	
 	export default {
-		name: 'PodcastView'
-		}
+	
+		name: 'PodcastView',
+	
+		data() {
+          return {
+            listPodcast: [],
+            podcast: null,
+          };
+        },
+        
+        created: function() {
+          this.fetchData();
+        },
+        watch: {
+          currentPodcast: "fetchData",
+        },
+        methods: {
+          
+          fetchData: function () {
+            const self = this;
+            axios
+              .get(apiURL)
+              .then(function (response) {
+                console.log(response.data, "dataAsked");
+                self.listPodcast = response.data.data;
+              })
+              .catch(function (error) {
+                console.log(error);
+              });
+          },
+        },
+      }
 		
 </script>
