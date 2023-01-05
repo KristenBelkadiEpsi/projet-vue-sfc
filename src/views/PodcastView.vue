@@ -1,12 +1,14 @@
 <template>
-  <div class="listPodcast">
+  <div class="podcast">
     <h1> Liste des Podcasts </h1>
 		<ul>
 			<li v-for="podcast in listPodcast">
-				{{podcast.name}} (id: {{podcast.id}})
-				<li>
+				{{podcast.name}} <a> (id: {{podcast.id}}) </a>
+				<br>
+				<li v-if="podcast.picture !== null" >
 					<img :src="podcast.picture" alt="img" />
 				</li>
+				<br>
 			</li>
 			
 		</ul>	
@@ -52,3 +54,17 @@
       }
 		
 </script>
+
+
+<style scoped>
+h3 {
+  margin: 40px 0 0;
+}
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+a {
+  color: #c3c4c5;
+}
+</style>
