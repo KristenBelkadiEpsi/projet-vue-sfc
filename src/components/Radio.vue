@@ -3,10 +3,10 @@
         <h1>Les differentes radio de Deezer</h1>
         <div id="inputRadio">
           <div v-if="listRadio.length > 0" >
-            <ul>
+            <ul class=grid>
               <li v-for="radio in listRadio">
-                {{radio.title}}
-              <li><img :src="radio.picture" alt="img" /></li>
+                <label>{{radio.title}}</label>
+              <li> <img :src="radio.picture" alt="img" /></li>
               </li>
           </ul>
         </div>
@@ -15,6 +15,20 @@
     </div>
   </template>
   
+  <style>
+    			ul.grid {
+				list-style: none;
+				width: 800px;
+				margin: 0 auto;
+				text-align: top;
+			}
+
+			ul.grid li {
+				padding: 2px;
+				float: left;
+			}
+  </style>
+
   <script>
   import axios from 'axios'
   
@@ -24,6 +38,8 @@
     
     data() {
             return {
+                layout: "grid",
+
               listRadio: [],
               radio: null,
             };
