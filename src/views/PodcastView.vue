@@ -4,8 +4,12 @@
 		<ul>
 			<li v-for="podcast in listPodcast">
 				{{podcast.name}} (id: {{podcast.id}})
+				<li>
+					<img :src="podcast.picture" alt="img" />
+				</li>
 			</li>
-		</ul>
+			
+		</ul>	
   </div>
 </template>
 
