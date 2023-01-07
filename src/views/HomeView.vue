@@ -25,12 +25,12 @@
 
 <script>
 // @ is an alias to /src
+
 import axios from 'axios'
 
-const apiURL = "https://api.deezer.com/genre/";
+
 export default {
   name: 'HomeView',
-  
   data() {
           return {
             listGenre: [],
@@ -68,4 +68,4 @@ export default {
 li{
   list-style-type: none;
 }
-</style>
+</script>
