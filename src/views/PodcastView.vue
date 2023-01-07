@@ -18,7 +18,7 @@
 <script>
 	import axios from 'axios'
 	const apiURL = "https://api.deezer.com/podcast/";
-	
+	//test
 	export default {
 	
 		name: 'PodcastView',
