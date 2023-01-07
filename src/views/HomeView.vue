@@ -3,14 +3,17 @@
     <div v-cloak id="test">
       <h1>Les styles musicaux Deezer</h1>
       <div>
-        <h2>Trouve ton style préférer</h2>
+        <h2>Cherche des artistes de ton style préféré</h2>
       </div>
       <div id="inputStyle">
         <div v-if="listGenre.length > 0" >
           <ul>
+            
             <li v-for="genre in listGenre">
+              <router-link :to="'/ListeArtistes/'+genre.id">
               {{genre.name}}
             <li><img :src="genre.picture" alt="img" /></li>
+          </router-link>
             </li>
         </ul>
       </div>
@@ -22,16 +25,12 @@
 
 <script>
 // @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+
 import axios from 'axios'
 
-const apiURL = "https://api.deezer.com/genre/";
+
 export default {
   name: 'HomeView',
-  components: {
-    HelloWorld
-  },
-  
   data() {
           return {
             listGenre: [],
@@ -69,4 +68,4 @@ export default {
 li{
   list-style-type: none;
 }
-</style>
+</script>

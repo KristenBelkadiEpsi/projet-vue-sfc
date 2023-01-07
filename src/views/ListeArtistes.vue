@@ -20,14 +20,14 @@ export default {
     };
   },
   props: {
-    genre: String,
+    genreId: String,
   },
   async mounted() {
     await this.recupererListeArtiste();
   },
   methods: {
     recupererListeArtiste: async function () {
-      await axios.get(`https://api.deezer.com/genre/${this.genreId}/artists`).then((reponse) => {
+      await axios.get(`https://api.deezer.com/genre/${this.$route.params.id}/artists`).then((reponse) => {
         reponse.data.data.forEach((element) => {
           this.listeDesArtistes.push({ nom: element.name, id: element.id });
         });
