@@ -13,6 +13,7 @@ const routes = [
     // route level code-splitting
     // this generates a separate chunk (podcast.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
+
     component: () => import(/* webpackChunkName: "podcast" */ '../views/PodcastView.vue')
   },
   {
