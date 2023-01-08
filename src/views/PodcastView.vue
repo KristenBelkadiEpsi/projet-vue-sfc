@@ -5,8 +5,8 @@
 			<li v-for="podcast in listPodcast">
 				{{podcast.name}} <a> (id: {{podcast.id}}) </a>
 				<br>
-				<li v-if="podcast.picture !== null" >
-					<img :src="podcast.picture" alt="img" />
+				<li v-if="podcast.picture_medium !== null" >
+					<img :src="podcast.picture_medium" alt="img" />
 				</li>
 				<br>
 			</li>

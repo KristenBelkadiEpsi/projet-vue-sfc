@@ -19,7 +19,17 @@ const routes = [
   {
     path: '/ListeArtistes/:id',
     name: 'ListeArtistes',
-    component: () => import('../views/ListeArtistes.vue')
+    component: () => import('../views/ListeArtistesView.vue')
+  },
+  {
+    path: '/artiste/:id',
+    name: 'artiste',
+    component: () => import('../views/ArtisteView.vue')
+  },
+  {
+    path:'/radio',
+    name: 'radio',
+    component: () => import('../views/RadioView.vue')
   }
 ]
 

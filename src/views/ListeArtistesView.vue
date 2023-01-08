@@ -1,7 +1,7 @@
 <template>
   <ul>
     <li v-for="artiste in listeDesArtistes">
-      <a href="">{{ artiste.nom }}</a>
+      <router-link :to="'/artiste/' +artiste.id">{{ artiste.nom }}</router-link>
     </li>
   </ul>
 </template>
