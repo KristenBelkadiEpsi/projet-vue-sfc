@@ -1,6 +1,6 @@
 <template>
   <nav>
-    <router-link to="/">Home</router-link> |
+    <router-link to="/">Acceuil</router-link> |
     <router-link to="/podcast">Podcast</router-link> |
     <router-link to="/radio">Radio</router-link>
   </nav>
